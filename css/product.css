@@ -1,0 +1,124 @@
+.laptopImg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    right: 5%;
+    top: 1%;
+}
+.laptopImg img {
+    position: relative;
+    /*	width: 100px;
+	height: 100px;*/
+    max-width: 100%;
+    max-height: 100%;
+    right: 5%;
+    top: 15%;
+    vertical-align: middle;
+}
+.review {
+    position: absolute;
+    line-height: 20px;
+    width: 400px;
+}
+.review .goodReview img {
+    position: relative;
+    float: left;
+    max-width: 70%;
+    max-height: 70%;
+}
+.review .badReview img {
+    position: relative;
+    float: left;
+    max-width: 70%;
+    max-height: 70%;
+}
+.review h3 {
+    position: relative;
+    left: 5px;
+}
+.review .goodReview {
+    position: relative;
+    height: 100px;
+    top: 0px;
+}
+.review .badReview {
+    position: relative;
+    height: 100px;
+    top: 50%;
+}
+.review #moreReviewButton {
+    position: absolute;
+    right: 5%;
+}
+/*.review .stars{
+	display: block;
+    background: url(http://www.ulmanen.fi/stuff/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}*/
+ .rating-box {
+    background: url("../data/bkg_rating.png") repeat-x;
+    font-size: 0;
+    height: 13px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 70px;
+}
+.rating-box .rating {
+    background: url("../data/bkg_rating.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 13px;
+}
+.laptopPrices {
+    position: absolute;
+    top:70%;
+}
+.laptopPrices .price {
+    float: right;
+    color:#a0a0a0;
+}
+.specifications {
+    position: absolute;
+    width: 70%;
+    top:70%;
+    left: 25%;
+}
+.specifications .specTitle {
+    font-family: arial;
+    color: blue;
+}
+.specifications table {
+    /*display: table-row-group;*/
+    /*border:1px solid black;*/
+    border-collapse:collapse;
+    width: 100%;
+}
+/*tr{
+	position: absolute;
+	
+}*/
+.specifications  td {
+    border:1px solid gray;
+    width: 30%;
+    padding:5px;
+}
+.specifications tr {
+    display: table-row;
+    /*border:1px solid black;*/
+}
+.specifications .data {
+    width: 70%;
+    background-color: yellow;
+}
+.reviews {
+    position: absolute;
+    width: 70%;
+    top:100%;
+    left: 25%;
+}
+h4 {
+    font-size: 11px;
+    font-style: arial;
+}

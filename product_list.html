@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>CoL - Product list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/interactiveSemantics/mice.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplDeserializer.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplFieldTypes.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphCollapse.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphExpand.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/myMICE.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/compare.css">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css">
+    <link rel="stylesheet" type="text/css" href="css/filter.css">
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/laptop.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
+    <script type="text/javascript" src="js/compare.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="data/laptopsMetadata.js"></script>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../CoL/resources/style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    
+    <script>
+    $(function price() {
+        $("#slider-range-price").slider({
+            range: true,
+            min: 0,
+            max: 3000,
+            values: [100, 2000],
+            slide: function(event, ui) {
+                $("#amount-price").val("$" + ui.values[0] + " - $" + ui.values[1]);
+
+                priceFilter(ui.values[0], ui.values[1]);
+
+            }
+        });
+        $("#amount-price").val("$" + $("#slider-range-price").slider("values", 0) +
+            " - $" + $("#slider-range-price").slider("values", 1));
+    });
+    $(function weight() {
+        $("#slider-range-weight").slider({
+            range: true,
+            min: 0,
+            max: 7,
+            values: [0, 7],
+            slide: function(event, ui) {
+                $("#amount-weight").val(ui.values[0] + " lbs - " + ui.values[1] + " lbs");
+                weightFilter(ui.values[0], ui.values[1]);
+
+
+            }
+        });
+        $("#amount-weight").val($("#slider-range-weight").slider("values", 0) + " lbs - " + $("#slider-range-weight").slider("values", 1) + " lbs");
+    });
+    $(function screenSize() {
+        $("#slider-range-ss").slider({
+            range: true,
+            min: 7,
+            max: 20,
+            values: [10, 16],
+            slide: function(event, ui) {
+                $("#amount-ss").val(ui.values[0] + " in - " + ui.values[1] + " in");
+                screenSizeFilter(ui.values[0], ui.values[1]);
+            }
+        });
+        $("#amount-ss").val($("#slider-range-ss").slider("values", 0) + " in - " + $("#slider-range-ss").slider("values", 1) + " in");
+    });
+    </script>
+
+</head>
+
+<body>
+    <div id="filter">
+        <p>
+            <label for="amount-price"></label>
+            <h3>Price:</h3>
+
+            <input class="slider" type="text" id="amount-price" style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+
+
+        <div id="slider-range-price"></div>
+        <hr>
+
+        <section class="manufacturerFilter">
+
+            <h3>Manufacturer</h3>
+            <label>
+                <input type="checkbox" name="filter" id="Acer" value="Acer" checked>
+                <span>Acer</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" id="Apple" value="Apple" checked>
+                <span>Apple</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" id="Asus" value="Asus" checked>
+                <span>Asus</span>
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="filter" id="Dell" value="Dell" checked>
+                <span>Dell</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="filter" id="HP" value="HP" checked>
+                <span>HP</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="filter" id="Lenovo" value="Lenovo" checked>
+                <span>Lenovo</span>
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="filter" id="Samsung" value="Samsung" checked>
+                <span>Samsung</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" id="Toshiba" value="Toshiba" checked>
+                <span>Toshiba</span>
+            </label>
+
+            <hr>
+        </section>
+        <p>
+            <label for="amount-weight"></label>
+            <h3>Weight:</h3>
+            <input class="slider" type="text" id="amount-weight" style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+
+        <div id="slider-range-weight"></div>
+        <hr>
+
+        <section class="CPUFilter">
+            <h3>CPU</h3>
+            <label>
+                <input type="checkbox" name="filter" id="Intel" value="Intel" checked>
+                <span>Intel</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="filter" id="AMD" value="AMD" checked>
+                <span>AMD</span>
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="filter" id="Exynos" value="Samsung" checked>
+                <span>Samsung</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" id="ARM" value="ARM" checked>
+                <span>ARM</span>
+            </label>
+
+            <hr>
+        </section>
+
+        <label for="amount-ss"></label>
+        <h3>Screen Size:</h3>
+
+        <input class="slider" type="text" id="amount-ss" style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+
+        <div id="slider-range-ss"></div>
+        <hr>
+
+        <section class="OSFilter">
+
+            <h3>Operating system</h3>
+            <label>
+                <input type="checkbox" name="filter" id="Windows" value="Windows" checked>
+                <span>Windows</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="filter" id="OS X" value="OS X" checked>
+                <span>OS X</span>
+            </label>
+            <label>
+                <input type="checkbox" name="filter" id="Chrome" value="Chrome" checked>
+                <span>Chrome</span>
+            </label>
+            <hr>
+        </section>
+
+
+
+    </div>
+
+    <div id="filter_bar">
+        <section class="filterBar" section="filterBar">
+            <span class="desc">Sort By:
+                <select id="sortSelection" onchange="sortLaptops(event);">
+                    <option value="name">Name</option>
+                    <option value="rating">Rating</option>
+                    <option value="lowP">Lowest price</option>
+                    <option value="highP">Highest price</option>
+                </select>
+            </span>
+
+
+            <div class="divider left"></div>
+            <span class="desc">
+                <div class="triangle"></div>
+            </span>
+            <div class="divider right"></div>
+            <span class="desc">
+                <button id="compareButton" class="seeAll" value="">Compare Selected</button>
+            </span>
+            <span class="desc">
+                <canvas id="Pie" width="20" height="20"></canvas>
+            </span>
+
+    </div>
+    </section>
+
+    </div>
+
+    <div id="laptops">
+        <section class="laptop">
+        </section>
+        <div id="tagArea">
+            <ul id="tagList">
+
+            </ul>
+        </div>
+        <div id="main">
+            <div id="laptopContainer" style="overflow:scroll; height:500px;">
+            </div>
+        </div>
+
+        <script>
+        buildLaptopsDics();
+        setup();
+        //console.log(laptopQueue);
+        for (var t in laptopQueue) {
+            checkQueue[t] = laptopQueue[t];
+            initialQueue[t] = laptopQueue[t];
+        }
+        manufacturerFilter();
+        CPUFilter();
+        OSFilter();
+        </script>
+    </div>
+</body>
+
+</html>

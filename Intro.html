@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Introduction of Comparison of Laptops</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h3 style="margin-left:auto;margin-right:auto;width: 35%;">655 HCC - Assignment 2 - Part 3 - Functional Prototype</h3>
+    <h1 style="margin-left:auto;margin-right:auto;width: 35%;">Website: Comparison of Laptops</h1>
+    <h2 style="margin-left:auto;margin-right:auto;width: 15%;">by Zhijiao Liu</h2>
+    <div style="posotion: absolute; margin-left:auto; margin-right:auto;width: 50%;">
+        <p>
+            <a href="http://people.tamu.edu/~zhijiaoliu/CoL/index.html" target="_blank">
+                <img style="posotion: absolute; margin-left:auto; margin-right:auto;width: 100%;" src="../CoL/data/indexPic.png"></img>
+            </a>
+            <a href="http://people.tamu.edu/~zhijiaoliu/CoL/index.html" target="_blank">Demo Website</a>
+        </p>
+        <hr>
+        <p>
+            <table style="posotion: absolute; margin-left:auto; margin-right:auto;width: 100%;border:1px solid black;">
+                <h3>Source code Description</h3>
+                <tbody>
+                    <tr>
+                        <th style="width: 11%; color: #ffffff; background-color: #555555; border: 1px solid #555555; padding: 3px; vertical-align: top; text-align: left;">
+                            File Place
+                        </th>
+                        <th style="width: 15%; color: #ffffff; background-color: #555555; border: 1px solid #555555; padding: 3px; vertical-align: top; text-align: left;">
+                            File Name
+                        </th>
+                        <th style="width: 37%; color: #ffffff; background-color: #555555; border: 1px solid #555555; padding: 3px; vertical-align: top; text-align: left;">
+                            Description
+                        </th>
+                        <th style="width: 37%; color: #ffffff; background-color: #555555; border: 1px solid #555555; padding: 3px; vertical-align: top; text-align: left;">
+                            Functions
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/Intro.html" target="_blank"> Intro.html</a>
+                        </td>
+                        <td>Introduction of each source code file.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/index.html" target="_blank"> index.html</a>
+                        </td>
+                        <td>Manu bar, including the logo, manu buttons, and search box. Use iframe to change the main content.</td>
+                        <td>Used functions mainly in main.js and laptop.js.
+                            <br>
+                            <i>buildLaptopsDics()</i> - Build three laptop dictionaries, AmazonLaptopsInfoDic, BestbuyLaptopsInfoDic,and EbayLaptopsInfoDic.
+                            <br>
+                            <i>enableSearch()</i> - Enable searching within title, e.g. "Asus HP".</td>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/main.html" target="_blank"> main.html</a>
+                        </td>
+                        <td>Show in main content area, including news slider and deals</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/product_list.html" target="_blank"> product_list.html</a>
+                        </td>
+                        <td>Show in main content area, including filter and grid laptop info.</td>
+                        <td>Used functions mainly in filter.js and laptop.js.</td>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/product.html" target="_blank"> product.html</a>
+                        </td>
+                        <td>Show in main content area, including reviews, specifications, prices, shares and so on.</td>
+                        <td>Used functions mainly in product.js and laptop.js.</td>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td><a href="../CoL/compare.html" target="_blank"> compare.html</a>
+                        </td>
+                        <td>Show in main content area, including radar chart, polar charts, specifications, shares and so on.</td>
+                        <td>Used functions mainly in compare.js and laptop.js.</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/main.js" target="_blank"> main.js</a>
+                        </td>
+                        <td>Build the laptop metadata dictionaries, control page changing in iframe and enable searching.</td>
+                        <td>buildLaptopsDics(), changePage(url), changeToCompare(addr, titlelist), returnMetadata(metadataOriginal, t), checkDataCondition(), makeDic(), getMetadata(url, callback), doJSONPCall(jsonpURL), removeByValue(arr, val), outputLaptop(title), search(), enableSearch()</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/laptop.js" target="_blank"> laptop.js</a>
+                        </td>
+                        <td>Initialize laptopQueue to show every laptop in dictionaries. Count how many laptops have been selected for comparison.</td>
+                        <td>setup(), showSearchResults(), showLaptopsInQueue(laptopMetadata), hangeToCompare(addr, selectLaptopsTitle), selectedPercentagePieChart(selectLaptops)</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/filter.js" target="_blank"> filter.js</a>
+                        </td>
+                        <td>Using with laptop.js to support the filtering of price, weight, screen size etc. Also support "sortBy" function.</td>
+                        <td>priceFilter(min, max), manufacturerFilter(), weightFilter(min, max), screenSizeFilter(min, max), OSFilter(), sortLaptops(event), sortLaptopsBy(sortBy)</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/product.js" target="_blank"> product.js</a>
+                        </td>
+                        <td>Used for building product.html page.</td>
+                        <td>getLaptopInfo(urlA, urlB, urlE), metaDataFromThreeSources(title), show(laptopMetadataAmazon, laptopMetadataBestbuy, laptopMetadataEbay), showSpecifications(laptop, laptopMetadataAmazon), showAllReviews(laptop, laptopMetadataAmazon), findReview(label, reviewList)</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/compare.js" target="_blank"> compare.js</a>
+                        </td>
+                        <td>Used for building compare.html page.</td>
+                        <td>buildList(titleList), getSelectLaptopInfo(titleList), getSelectLaptopInfo(titleList), drawPolarArea(titleList), drawStars(laptopMetadataAmazon, div), drawSpecifications(titleList, width)</td>
+                    </tr>
+                    <tr>
+                        <td>js</td>
+                        <td><a href="../CoL/js/Chart.js" target="_blank"> Chart.js</a>
+                        </td>
+                        <td>Used for drawing radar chart and polar chart.</td>
+                        <td>Chart(ctx).PolarArea(data, option), Chart(ctx).Radar(data, option)</td>
+                    </tr>
+                    <tr>
+                        <td>css</td>
+                        <td><a href="../CoL/css" target="_blank"> css files</a>
+                        </td>
+                        <td>Control the showing style of each elements in pages.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>data</td>
+                        <td><a href="../CoL/data" target="_blank"> data files</a>
+                        </td>
+                        <td>Pics and data used in this website.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>docs</td>
+                        <td><a href="../CoL/docs" target="_blank"> documentation files</a>
+                        </td>
+                        <td>Store pdf files.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>resources</td>
+                        <td><a href="../CoL/resources" target="_blank"> jQuery relevent files</a>
+                        </td>
+                        <td>jQuery relevent .js and .css files.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>engine1</td>
+                        <td><a href="../CoL/engine1" target="_blank"> news slider files</a>
+                        </td>
+                        <td>Relevent .js, .css and pics used in the news slider.</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </p>
+        <hr>
+        <p>
+            <h4>Comments</h4>
+            1. Because the item matching probelm across three sources, only use 11 different laptop models in this prototype.
+            <br>2. Now the links in laptop drop down only link to the product_list.html without filter.
+            <br>3. Each subsection of filter bar in product_list page works seperately.
+            <br>4. In product.html, it tries to use star scores and the first sentence to summurize good and bad reviews, but it is not very accurate based only on the first sentence in review. Can use semantic analysis to increase accracy in future.
+        </p>
+        <hr>
+        <P>
+            <h4>Acknowledgement</h4>
+            I would like to express my special appreciation and thanks to <a href="http://ecologylab.cs.tamu.edu/people/andruid.html" target="_blank">Dr. Andruid Kerne</a>, and our TAs, <a href="http://ecologylab.cs.tamu.edu/people/rhema.html" target="_blank">Rhema Linder</a> and <a href="http://ecologylab.cs.tamu.edu/people/nic.html" target="_blank">Nic Lupfer</a>. They answered lots of my questions and helped me a great deal in clarifying the design concepts, improving the website design and web programming.
+        </P>
+    </div>
+
+    <style>
+    table, th, td {
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+    </style>
+</body>
+
+</html>

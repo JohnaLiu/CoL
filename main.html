@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Comparison of Laptops</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/interactiveSemantics/mice.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplDeserializer.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplFieldTypes.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphCollapse.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphExpand.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/myMICE.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/compare.css">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css">
+    <link rel="stylesheet" type="text/css" href="css/filter.css">
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/laptop.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
+    <script type="text/javascript" src="js/compare.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="data/laptopsMetadata.js"></script>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../CoL/resources/style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <div id="ContentContainer">
+        <div id="wowslider-container1">
+            <h1 class="title">TOP NEWS</h1>
+            <hr class="line">
+            <div class="background"></div>
+            <div class="ws_images">
+                <ul>
+
+                    <li>
+                        <img src="http://o.aolcdn.com/hss/storage/adam/83048cc94b946c5debdd10c87eaca98f/msi-laptop-lead.jpg" alt="DSC_3837" title="" id="wows1_0" />
+                        <a href="http://www.engadget.com/2014/03/09/msi-gaming-laptop-gs60-ghost-pro-nvidia/" target="_blank">
+                            <h1 class="news_title">MSI gaming laptop packs next-gen NVIDIA graphics and '3K' display into Ultrabook thickness</h1>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <img src="http://o.aolcdn.com/hss/storage/adam/9e53403b0dafca381ae82f0b38cad757/fujitsu-palm-security.jpg" alt="DSC_3834" title="" id="wows1_1" />
+                        <a href="http://www.engadget.com/2014/03/09/fujitsu-palm-sense-laptop-prototypes/" target="_blank">
+                            <h1 class="news_title">Fujitsu's palm-scanning laptops won't be fooled by severed limbs</h1>
+                        </a>
+                    </li>
+
+                    <li>
+                        <img src="http://o.aolcdn.com/hss/storage/adam/a75325c1e39960bd2a52db51139362ab/DSC09901.jpg" alt="DSC_3783" title="" id="wows1_2" />
+                        <a href="http://www.engadget.com/2014/03/08/samsung-ativ-book-9-style-hands-on/" target="_blank">
+                            <h1 class="news_title">Samsung's thing for (faux) leather continues with the ATIV Book 9 Style</h1>
+                        </a>
+                    </li>
+
+                    <li>
+                        <img src="http://o.aolcdn.com/hss/storage/adam/d6f6a2df9f9b6fa25e81005df74fdcb0/M2800_630_wide.jpg" alt="DSC_3781" title="" id="wows1_3" />
+                        <a href="http://www.engadget.com/2014/03/07/dell-precision-m2800-workstation/" target="_blank">
+                            <h1 class="news_title">Dell's Precision M2800 workstation is for prosumers who need performance on the cheap</h1>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_bullets">
+                <div>
+                    <a href="http://www.engadget.com/2014/03/09/msi-gaming-laptop-gs60-ghost-pro-nvidia/" target="_blank" title="1">
+                        <img src="http://o.aolcdn.com/hss/storage/adam/83048cc94b946c5debdd10c87eaca98f/msi-laptop-lead.jpg" alt="DSC_3837" />1</a>
+                    <a href="http://www.engadget.com/2014/03/09/fujitsu-palm-sense-laptop-prototypes/" target="_blank" title="2">
+                        <img src="http://o.aolcdn.com/hss/storage/adam/9e53403b0dafca381ae82f0b38cad757/fujitsu-palm-security.jpg" alt="DSC_3834" />2</a>
+                    <a href="http://www.engadget.com/2014/03/08/samsung-ativ-book-9-style-hands-on/" target="_blank" title="3">
+                        <img src="http://o.aolcdn.com/hss/storage/adam/a75325c1e39960bd2a52db51139362ab/DSC09901.jpg" />3</a>
+                    <a href="http://www.engadget.com/2014/03/07/dell-precision-m2800-workstation/" target="_blank" title="4">
+                        <img src="http://o.aolcdn.com/hss/storage/adam/d6f6a2df9f9b6fa25e81005df74fdcb0/M2800_630_wide.jpg" alt="DSC_3781" />4</a>
+                </div>
+            </div>
+
+            <div class="ws_shadow"></div>
+        </div>
+        <script type="text/javascript" src="engine1/wowslider.js"></script>
+        <script type="text/javascript" src="engine1/script.js"></script>
+
+        <div id="deals">
+            <h1 class="title">LATEST DEALS</h1>
+            <hr class="line">
+            <div id="products">
+
+                <div class="deal_product">
+                    <div class="left_col">
+                        <img src="http://pisces.bbystatic.com/image2/BestBuy_US/images/products/1732/1732095_sa.jpg;canvasHeight=130;canvasWidth=180" title="" id="deal1" />
+                    </div>
+                    <div class="right_col">
+                        <h1 class="deal_title">Best Buy</h1>
+                        <h2 class="deal_content">HP - ENVY TouchSmart Sleekbook 15.6" Touch-Screen Laptop - 8GB Memory - 750GB Hard Drive - Modern Silver</h2>
+                        <h2 class="deal_price">$699.99<a href="http://www.bestbuy.com/site/hp-envy-touchsmart-sleekbook-15-6-touch-screen-laptop-8gb-memory-750gb-hard-drive-modern-silver/1732095.p?id=1219061843539&skuId=1732095" target="_blank" class="see_it">See it</a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="deal_product">
+                    <div class="left_col">
+                        <img src="http://ecx.images-amazon.com/images/I/71ymCmX%2BcuL._SX522_.jpg" title="" id="deal2" />
+                    </div>
+                    <div class="right_col">
+                        <h1 class="deal_title">Amazon</h1>
+                        <h2 class="deal_content">Sony VAIO SVD13225PXW 13.3-Inch Convertible 2 in 1 Touchscreen Ultrabook (White)</h2>
+                        <h2 class="deal_price">$1,899.99<a href="http://www.amazon.com/Sony-SVD13225PXW-13-3-Inch-Convertible-Touchscreen/dp/B00FB45YI8/ref=sr_1_3?s=pc&ie=UTF8&qid=1394500890&sr=1-3" target="_blank" class="see_it">See it</a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="deal_product">
+                    <div class="left_col">
+                        <img src="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/85EAAOxy87tSE7jd/$(KGrHqEOKpIFIBc2)W+CBSE7jdL5Vw~~60_3.JPG" title="" id="deal3" />
+                    </div>
+                    <div class="right_col">
+                        <h1 class="deal_title">ebay</h1>
+                        <h2 class="deal_content">Lenovo Notebook G500s (59373026) 15.6" Intel Core i5 3230M (2.60GHz) 1TB HDD 6GB</h2>
+                        <h2 class="deal_price">$549.99<a href="http://www.ebay.com/itm/Lenovo-Notebook-G500s-59373026-15-6-Intel-Core-i5-3230M-2-60GHz-1TB-HDD-6GB/301107296466?pt=Laptops_Nov05&hash=item461b64b8d2" target="_blank" class="see_it">See it</a>
+                        </h2>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

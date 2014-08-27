@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>CoL - Compare</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/interactiveSemantics/mice.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplDeserializer.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplFieldTypes.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphCollapse.js"></script>
+    <script type="text/javascript" src="http://ecologylab.net/research/bigsemantics/simpl/simplGraphExpand.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/myMICE.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/compare.css">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css">
+    <link rel="stylesheet" type="text/css" href="css/filter.css">
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/laptop.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
+    <script type="text/javascript" src="js/compare.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="data/laptopsMetadata.js"></script>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../CoL/resources/style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+    <script type="text/javascript">
+    buildLaptopsDics();
+    </script>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+    </script>
+    <canvas id="RadarChart" width="300" height="300"></canvas>
+    <div id="laptopsComparingContainer">
+        <div id="laptopsTitleAndPic"></div>
+        <div id="pieChartCompare"></div>
+
+        <div id="PolarCharts"></div>
+        <div id="specificationCompare"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="shareInCompare">
+        <div id="fb-root"></div>
+        <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=227111074152612";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <div class="fb-comments" data-href="http://www.merriam-webster.com/thesaurus/hello" data-width="300" data-numposts="5" data-colorscheme="light"></div>
+        <br/>
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+        <script>
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+        </script>
+
+        <!--         <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://www.amazon.com/Samsung-XE303C12-A01US-Chromebook-Wi-Fi-11-6-Inch/dp/B009LL9VDG/ref=zg_bs_565108_2"></div>
+        <script type="text/javascript">
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        </script> -->
+
+        <script src="https://apis.google.com/js/plusone.js"></script>
+        <g:plus action="share"></g:plus>
+    </div>
+
+    <script type="text/javascript">
+    // var res = localStorage.getItem("selectLaptopsTitle");
+    // console.log(res);
+
+    var list = JSON.parse(localStorage.getItem("selectLaptopsTitle"));
+    console.log(list);
+    buildList(list);
+    getSelectLaptopInfo(list);
+    </script>
+
+</body>
+
+</html>
